@@ -120,12 +120,16 @@ In the `main.js` module, invoke the `PotteryList` component function. Take its r
 > 🧨 Before you click the "Assessment Complete" button on the Learning Platform, add your answers below for each question and make a commit. It is your option to request a face-to-face meeting with a coach for a vocabulary review.
 
 1. Explain how you got the HTML, with the correct data, displayed in the browser?
-   > Your answer here
+   > The array of items available for sale was exported from `PotteryCatalog.js` to `PotteryList.js`. 
+   Within `PotteryList.js`, an empty string - `potteryHTMLString` - was initialized. Utilizing a "for" loop, the program iterated through the imported array, placing elements within the `potteryHTMLString`.  This created a string for each applicable item in the array.
+   The function, `PotteryList`, that created the string was imported to `main.js` where it was assigned to the variable `potteryHTML`. Next, the `document.querySelector` method was used to retrieve an HTML element (`.potteryList`) from the webpage. The retrieved element was assigned to the variable `potteryListElement`. Finally, the `innerHTML property` of the `potteryListElement` was set to the string stored in `potteryHTML`.
 2. In the **PotteryList** module, when you iterate your pottery, you need to show the evidence of what the **weight** property's value is for the 2nd piece of pottery. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+   > Despite multiple attempts, I've still not been able to get Loom to record video or audio. Here's the link and my walkthrough notes:
+   Right click on the rendered web page and open “inspect.” Go to Sources -> open scripts -> open PotteryList → put break point on line 8 → refresh page → step over X3 → double click potteryHTMLString value to show weight property.  
+   https://www.loom.com/share/249e8b07572c4a76b59760aae3e1083b
 3. The **PotteryWheel** module has a single function named `makePottery`. Why doesn't that module have all of the other code in it?
-   > Your answer here
+   > Separation of code allows for better code organization. Additionally, separating code blocks into modules based on their functionality contributes to better reusability of those code blocks and makes maintenance easier by encapsulating one or few “actions” or data within a module.
 4. The pottery shop has learned that there is a set of customers that are willing to buy cracked pottery at a discounted price of $2.50. That means that the cracked pottery should now be displayed in the catalog. Explain the changes that this new business strategy would cause to your algorithm.
-   > Your answer here
+   > The `toSellOrNotToSell` function in `PotteryCatalog.js` could be modified by adding an “else” statement to the outermost “if” statement. That "else" statement would specify that all pottery where `pottery.cracked === true` would be priced at $2.50.
 5. In the **Kiln** module, you have a `firePottery()` function. You need to demonstrate how to use the debugger to verify the values of the parameters for that function when your code runs. Use [Loom](https://www.loom.com/) to record your browser window with the developer tools open and show those values.
-   > Paste your video's public URL here
+   > Right click on the page and open “inspect.” Go to Sources -> open scripts -> open Kiln → put break point on line 3 → expand pottery in the right hand pane → when execution passes `pottery.cracked = false`, the `cracked` value will be registered in the right hand pane. https://www.loom.com/share/572fb00dbbcf433bb63c77bb7cd6c75d
